@@ -1,9 +1,20 @@
 from flask import Blueprint, jsonify
+import math
 from .services.data_service import get_stock_data
 from .services.analysis_service import calculate_technical_indicators
 from .services.ai_service import generate_summary
 
 main_bp = Blueprint('main', __name__)
+
+
+def _sanitize_json(value):
+    if isinstance(value, float) and (math.isnan(value) or math.isinf(value)):
+        return None
+    if isinstance(value, list):
+        return [_sanitize_json(item) for item in value]
+    if isinstance(value, dict):
+        return {key: _sanitize_json(item) for key, item in value.items()}
+    return value
 
 @main_bp.route('/api/stock/<ticker>', methods=['GET'])
 def stock_analysis(ticker):
@@ -22,13 +33,15 @@ def stock_analysis(ticker):
     
     # 3. Generate AI Summary
     summary = generate_summary(ticker, analyzed_history)
-    
-    return jsonify({
+
+    payload = {
         "ticker": ticker,
         "info": info,
         "data": analyzed_history,
         "summary": summary
-    })
+    }
+
+    return jsonify(_sanitize_json(payload))
 
 @main_bp.route('/health', methods=['GET'])
 def health():

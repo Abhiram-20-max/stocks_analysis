@@ -33,6 +33,12 @@ This project is a modern web application built to analyze stock market performan
 ### Option 1: Docker (Recommended)
 Prerequisite: Docker Desktop installed.
 
+Set your Alpha Vantage API key (optional fallback when Yahoo Finance fails):
+
+```bash
+set ALPHAVANTAGE_API_KEY=your_key_here
+```
+
 ```bash
 # Clone the repository
 git clone https://github.com/yourusername/stocks-analysis.git
@@ -50,6 +56,7 @@ If you don't have Docker, you can run the services individually.
 ```bash
 cd backend
 pip install -r requirements.txt
+set ALPHAVANTAGE_API_KEY=your_key_here
 python run.py
 # Server starts at http://localhost:5000
 ```
