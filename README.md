@@ -1,8 +1,8 @@
-# 📈 AI-Powered Stock Analysis Platform
+#  AI-Powered Stock Analysis Platform
 
 A full-stack financial analysis application that combines real-time stock data, technical indicators, and AI-driven insights to help users make informed investment decisions.
 
-## 🚀 Overview
+##  Overview
 
 This project is a modern web application built to analyze stock market performance. It fetches live data, calculates key technical indicators (RSI, lipid, MACD, SMA), and uses an AI agent to generate natural-language performance summaries.
 
@@ -12,7 +12,7 @@ This project is a modern web application built to analyze stock market performan
 - **AI Analyst**: Generates automated textual commentary on stock trends and technical signals.
 - **Dockerized**: Fully containerized for easy deployment.
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 ### Backend
 - **Language**: Python 3.9+
@@ -28,7 +28,7 @@ This project is a modern web application built to analyze stock market performan
 ### DevOps
 - **Containerization**: Docker & Docker Compose
 
-## ⚡ Getting Started
+##  Getting Started
 
 ### Option 1: Docker (Recommended)
 Prerequisite: Docker Desktop installed.
@@ -69,7 +69,7 @@ npm run dev
 # App starts at http://localhost:5173
 ```
 
-## 📊 Features
+##  Features
 
 - **Dashboard**: Search for any stock ticker (e.g., AAPL, NVDA, TSLA).
 - **Technical Analysis**:
@@ -79,5 +79,5 @@ npm run dev
 - **Fundamental Metrics**: View P/E Ratio, Earnings Growth, and Sector info.
 - **AI Summary**: Get a quick, readable paragraph summarizing the technical outlook.
 
-## 📝 License
+##  License
 This project is open-source and available under the MIT License.
